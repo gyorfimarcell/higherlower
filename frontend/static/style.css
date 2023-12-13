@@ -96,7 +96,7 @@ button:hover .arrow-down {
 }
 
 #vs {
-    --grad: linear-gradient(to right, white 50%, white 0);
+    --bg: white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -106,9 +106,9 @@ button:hover .arrow-down {
     width: 100px;
 
     border-radius: 50%;
-    background: var(--grad);
-    background-size: 200% 100%;
-    background-position: right;
+    background: var(--bg);
+    background-size: 100% 200%;
+    background-position: top;
 
     text-align: center;
     line-height: 100px;
@@ -118,17 +118,17 @@ button:hover .arrow-down {
 }
 
 #vs.win, #vs.lose {
-    background-position: left;
+    background-position: bottom;
     transition: background-position ease-in .4s;
     color: white;
 }
 
 #vs.win {
-    --grad: linear-gradient(to right, green 50%, white 0);
+    --bg: linear-gradient(to top, green 50%, white 0);
 }
 
 #vs.lose {
-    --grad: linear-gradient(to right, red 50%, white 0);
+    --bg: linear-gradient(to top, red 50%, white 0);
 }
 
 #vs::after {
