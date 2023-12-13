@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>higher - lower</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script defer src="static/game.js"></script>
+</head>
+<body>
+    <div id="game">
+        <div id="container">
+            <div class="side col" id="left">
+                <h1>"<span id="left-name"></span>"</h1>
+                <p>has</p>
+                <h1 id="left-number"></h1>
+                <p>average monthly searches</p>
+            </div>
+            <div class="side col" id="right">
+                <h1>"<span id="right-name"></span>"</h1>
+                <p>has</p>
+                <div id="right-results" class="col" style="display: none;">
+                    <h1 id="right-number"></h1>
+                    <p>average monthly searches</p>
+                </div>
+                <div id="right-buttons" class="col">
+                    <button onclick="Compare(true)">Higher <span class="arrow-up">▲</span></button>
+                    <button onclick="Compare(false)">Lower <span class="arrow-down">▼</span></button>
+                    <p>searches than <span id="compare-name"></span></p>
+                </div>
+            </div>
+        </div>
+        <div id="vs"></div>
+        <div id="score-div">Score: <span id="score">0</span></div>
+    </div>
+    <div id="lose-screen" class="col" style="display: none;">
+        <p>You scored:</p>
+        <h1 id="lose-score">0</h1>
+        <button onclick="window.location.reload()">Play again</button>
+    </div>
+</body>
+</html>

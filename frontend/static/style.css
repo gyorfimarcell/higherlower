@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gray;
+    color: white;
+}
+
+h1, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+#lose-screen {
+    height: 100%;
+}
+
+#lose-screen button:not(:hover) {
+    color: white;
+}
+
+#game {
+    height: 100vh;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+}
+
+#container.transition {
+    transform: translateX(-50vw);
+    transition: transform ease-in 1s;
+}
+
+.side {
+    width: 100%;
+    height: 100%;
+
+    background-color: #0008;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#left-number, #right-number {
+    color: yellow;
+}
+
+button {
+    width: 200px;
+    padding: 16px 0;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: yellow;
+
+    background: none;
+    border: 2px solid white;
+    border-radius: 2.5rem;
+}
+
+.arrow-up, .arrow-down {
+    color: white;
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform ease-in-out .1s;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+button:hover .arrow-up {
+    color: black;
+    transform: translateY(-5px);
+}
+
+button:hover .arrow-down {
+    color: black;
+    transform: translateY(5px);
+}
+
+#vs {
+    --grad: linear-gradient(to right, white 50%, white 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    height: 100px;
+    width: 100px;
+
+    border-radius: 50%;
+    background: var(--grad);
+    background-size: 200% 100%;
+    background-position: right;
+
+    text-align: center;
+    line-height: 100px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+#vs.win, #vs.lose {
+    background-position: left;
+    transition: background-position ease-in .4s;
+    color: white;
+}
+
+#vs.win {
+    --grad: linear-gradient(to right, green 50%, white 0);
+}
+
+#vs.lose {
+    --grad: linear-gradient(to right, red 50%, white 0);
+}
+
+#vs::after {
+    content: "VS";
+}
+
+#vs.win::after {
+    content: "✓";
+}
+
+#vs.lose::after {
+    content: "X";
+}
+
+#score-div {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    color:  white;
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+
+@media only screen and (max-width: 955px) {
+    #container {
+        flex-direction: column;
+    }
+}
